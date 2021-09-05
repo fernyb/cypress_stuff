@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "open": "cypress open --config-file cypress.json"
+  },
+  "dependencies": {
+    "cy2": "^1.2.1",
+    "cypress": "^8.2.0",
+    "cypress-real-events": "^1.5.1"
+  }
+}
