@@ -5,7 +5,7 @@ run:
 	docker container run --rm --tty --interactive cypresstest:v1
 
 start:
-	docker-compose up
+	docker-compose up -d
 
 stop:
 	docker-compose down

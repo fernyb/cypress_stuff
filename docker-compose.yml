@@ -10,8 +10,6 @@ services:
 
   director:
     image: agoldis/sorry-cypress-director:latest
-    profiles:
-      - services
     environment:
       DASHBOARD_URL: http://localhost:8080
       EXECUTION_DRIVER: '../execution/mongo/driver'
@@ -45,8 +43,6 @@ services:
 
   dashboard:
     image: agoldis/sorry-cypress-dashboard:latest
-    profiles:
-      - services
     environment:
       GRAPHQL_SCHEMA_URL: http://localhost:4000
       GRAPHQL_CLIENT_CREDENTIALS: ''
@@ -72,8 +68,6 @@ services:
 
   createbuckets:
     image: minio/mc
-    profiles:
-      - services
     depends_on:
       - storage
     entrypoint: >
@@ -86,12 +80,3 @@ services:
       /usr/bin/mc policy set public myminio/sorry-cypress;
       exit 0;
       "
-
-  # cypress:
-  #   image: cypresstest:v1
-  #   depends_on:
-  #     - director
-  #     - dashboard
-  #   profiles:
-  #     - cypress
-  #   command: ./run_test.sh

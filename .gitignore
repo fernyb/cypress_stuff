@@ -1,3 +1,4 @@
-node_modules
-.vscode
-cypress/screenshots/*
+node_modules/*
+*/node_modules/*
+.vscode/*
+cypress/screenshots
