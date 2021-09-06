@@ -4,8 +4,8 @@ build:
 run:
 	docker container run --rm --tty --interactive cypresstest:v1
 
-services:
-	docker-compose --profile services up -d
+start:
+	docker-compose up
 
 stop:
 	docker-compose down
@@ -13,4 +13,4 @@ stop:
 test:
 	docker-compose --profile services up -d
 	sleep 1
-	./run_test.sh 1>2& /dev/null
+	./run_test.sh
