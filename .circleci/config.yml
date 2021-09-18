@@ -13,6 +13,10 @@ jobs:
             ls -la
             echo "^^^ That should look familiar"
       - run:
-          name: Running in a Unique Container
+          name: NPM Install
           command: |
-            whoami
+            npm install
+      - run:
+          name: Run Tests
+          command: |
+             npx cypress run --config-file cypress.json
