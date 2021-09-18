@@ -13,3 +13,4 @@ jobs:
           name: The First Step
           command: |
             echo "Hello World!"
+            echo "ls -la"
