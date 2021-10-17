@@ -4,5 +4,10 @@
   "viewportHeight": 1500,
   "projectId": "tests",
   "record": false,
-  "video": false
+  "video": false,
+  "reporter": "teamcity",
+  "reporterOptions": {
+    "mochaFile": "results/my-test-output.log",
+    "toConsole": true
+  }
 }

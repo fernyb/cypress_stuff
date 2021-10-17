@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="12.5380" tests="1" failures="0">
+  <testsuite name="Root Suite" timestamp="2021-10-15T01:50:22" tests="0" file="cypress/integration/components/calendar.js" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Calendar" timestamp="2021-10-15T01:50:22" tests="1" time="12.5380" failures="0">
+    <testcase name="Calendar set date" time="12.5380" classname="set date">
+    </testcase>
+  </testsuite>
+</testsuites>

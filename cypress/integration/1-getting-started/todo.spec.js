@@ -11,6 +11,27 @@
 // please read our getting started guide:
 // https://on.cypress.io/introduction-to-cypress
 
+class NameRow {
+  name = () => this.rootNode().find(".hello")
+
+  rootNode;
+
+  constructor(node) {
+    this.rootNode = node;
+  }
+}
+
+
+function dropdown(fn) {
+  // fn(new NameRow(() => cy.get("body")));
+  const rootNode = () => cy.get("body");
+  fn({
+    name() {
+      return rootNode().find(".hello");
+    }
+  })
+}
+
 describe('example to-do app', () => {
   beforeEach(() => {
     // Cypress starts out with a blank slate for each test
@@ -20,7 +41,13 @@ describe('example to-do app', () => {
     cy.visit('https://example.cypress.io/todo')
   })
 
-  it('displays two todo items by default', () => {
+  it.only("Test Classes", () => {
+    dropdown((row) => {
+      row.name();
+    });
+  });
+
+  it.skip('displays two todo items by default', () => {
     // We use the `cy.get()` command to get all elements that match the selector.
     // Then, we use `should` to assert that there are two matched items,
     // which are the two default items.
@@ -34,7 +61,7 @@ describe('example to-do app', () => {
     cy.get('.todo-list li').last().should('have.text', 'Walk the dog')
   })
 
-  it('can add new todo items', () => {
+  it.skip('can add new todo items', () => {
     // We'll store our item text in a variable so we can reuse it
     const newItem = 'Feed the cat'
 
@@ -57,7 +84,7 @@ describe('example to-do app', () => {
       .should('have.text', newItem)
   })
 
-  it('can check off an item as completed', () => {
+  it.skip('can check off an item as completed', () => {
     // In addition to using the `get` command to get an element by selector,
     // we can also use the `contains` command to get an element by its contents.
     // However, this will yield the <label>, which is lowest-level element that contains the text.

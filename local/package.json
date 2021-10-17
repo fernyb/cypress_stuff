@@ -12,6 +12,7 @@
     "axios": "^0.21.4",
     "blessed": "^0.1.81",
     "blessed-contrib": "^4.10.1",
+    "cli-progress": "^3.9.1",
     "parse-json": "^5.2.0"
   }
 }
